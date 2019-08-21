@@ -47,7 +47,7 @@ In experiments below method realized in this project is compared with Random For
 
 **Datasets**  
 
-All datasets were randomly splitted to 2 equal parts 5 times. For each of this split one part used for train and another one for test, and then vice versa. Then all 10 different quality measures were then averaged. Result for each step of algorithm can be seen in pictures below.
+All datasets were randomly splitted to 2 equal parts 5 times. For each of this split one part used for train and another one for test, and then vice versa. Then all 10 different quality measures were averaged. Result for each step of algorithm can be seen in pictures below.
 
 |Classification task|Train size|Test size|Features|Classes|
 |-------------------|----------|---------|--------|-------|
