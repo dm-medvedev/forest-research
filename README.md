@@ -43,9 +43,11 @@ Below is formula which determine *H(s)*  particulary for the method considered i
 
 ### Experiments
 
-In experiments below method realized in this project is compared with Random Forest [2] and Adaptive Boosting [3] and also with combination of different pairs of these methods. All data can be found in UCI Machine Learning Repository [4].
+In experiments below method realized in this project is compared with Random Forest [2] and Adaptive Boosting [3] and also with combination of different pairs of these methods. All data can be found in UCI Machine Learning Repository [4]. Each step of experiment (x axis) is creation of one new tree for each algorithm involved in comparison.
 
 **Datasets**  
+
+All datasets were randomly splitted to 2 equal parts 5 times. For each of this split one part used for train and another one for test, and then vice versa. Then all 10 different quality measures were then averaged. Result for each step of algorithm can be seen in pictures below.
 
 |Classification task|Train size|Test size|Features|Classes|
 |-------------------|----------|---------|--------|-------|
