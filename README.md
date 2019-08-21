@@ -11,7 +11,7 @@ Below can be found comparison between the method presented in this project  with
 There two factors which influence ensemble quality: quality of each ensemble's estimators and "difference" between each ensemble's estimators. Correctness of this statement can be shown by few different error decompositions which can be find in [1][1].
 
 ### Method's work  
-1. y(x)  реальная метка, соответствующая объекту $x$ в выборке.
+1. y(x) *** реальная метка, соответствующая объекту $x$ в выборке.
 
 2. $K$ --- число классов в задаче классификации.
 
