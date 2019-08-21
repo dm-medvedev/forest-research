@@ -42,6 +42,8 @@ Below is formula which determine *H(s)*  particulary for the method considered i
 **General idea** is to build different trees using the ensemble built on previous step, maximize its entropy and minimize the entropy of real labels.  
 
 ### Experiments
+
+**Datasets**  
 |Classification task|Train size|Test size|Features|Classes|
 |-------------------|----------|---------|--------|-------|
 | [Optical Recognition of Handwritten Digits Data Set ](https://archive.ics.uci.edu/ml/datasets/optical+recognition+of+handwritten+digits)|5620|**None**|64|10|
