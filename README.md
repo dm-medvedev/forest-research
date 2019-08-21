@@ -20,7 +20,7 @@ There two factors which influence ensemble quality: quality of each ensemble's e
 4. <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ0.png" alt="drawing" width="30"/> is a tree built on step with number M. 
 
 5. *Leaf(x)* is a set of objects placed in the same leaf node as object x.  
-    <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ1.png" alt="drawing" width="300"/>  
+    <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ1.png" alt="drawing" width="400"/>  
 
 6. *C^M* is an ensemble built  on step with number M.  
     <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ2.png" alt="drawing" width="300"/>  
