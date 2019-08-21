@@ -54,10 +54,10 @@ Below is formula which determine *H(s)*  particulary for the method considered i
 | [Vehicle silhouettes](https://archive.ics.uci.edu/ml/datasets/Statlog+(Vehicle+Silhouettes)) |846|**None**|18|4|
 
 **Optical Recognition of Handwritten Digits Data Set**
-<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALL.pdf" type="application/pdf" width="300"/>
-\includepdf{nd13ALLindent.pdf}
-<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13AdaMY.pdf" alt="drawing" width="300"/>
-<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13RFMy.pdf" alt="drawing" width="300"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALL-1.png" type="application/pdf" width="300"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALLindent-1.png" type="application/pdf" width="300"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13AdaMY-1.png" alt="drawing" width="300"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13RFMy-1.png" alt="drawing" width="300"/>
 
 **Credit scoring**
 
