@@ -17,7 +17,7 @@ There two factors which influence ensemble quality: quality of each ensemble's e
 
 3. *Node* is a set of objects placed in current node, for which a feature and threshold are searched for.
 
-4. *T^M* is a tree built on step with number M. 
+4. <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ0.png" alt="drawing" width="100"/> is a tree built on step with number M. 
 
 5. *Leaf(x)* is a set of objects placed in the same leaf node as object x.  
 ![pic1](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ1.gif) Неправильно!!!!  
