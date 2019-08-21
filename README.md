@@ -53,19 +53,85 @@ Below is formula which determine *H(s)*  particulary for the method considered i
 | [Connectionist Bench (Sonar, Mines vs. Rocks) Data Set](http://archive.ics.uci.edu/ml/datasets/connectionist+bench+(sonar,+mines+vs.+rocks))|208|**None**|60|2|
 | [Vehicle silhouettes](https://archive.ics.uci.edu/ml/datasets/Statlog+(Vehicle+Silhouettes)) |846|**None**|18|4|
 
-**Optical Recognition of Handwritten Digits Data Set**
-<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALL-1.png" type="application/pdf" width="300"/>
-<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALLindent-1.png" type="application/pdf" width="300"/>
-<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13AdaMY-1.png" alt="drawing" width="300"/>
-<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13RFMy-1.png" alt="drawing" width="300"/>
+#### Optical Recognition of Handwritten Digits Data Set 
 
-**Credit scoring**
+**Accuracy**  
 
-**Glass Identification Data Set**
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALL-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALLindent-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13AdaMY-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13RFMy-1.png" alt="drawing" width="400"/>
 
-**Connectionist Bench (Sonar, Mines vs. Rocks) Data Set**
+**ROC-AUC** 
 
-**Vehicle silhouettes**
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALL-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALLindent-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13AdaMY-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13RFMy-1.png" alt="drawing" width="400"/>
+
+#### Credit scoring
+
+**Accuracy**
+
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALL-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALLindent-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13AdaMY-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13RFMy-1.png" alt="drawing" width="400"/>
+
+**ROC-AUC** 
+
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALL-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALLindent-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13AdaMY-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13RFMy-1.png" alt="drawing" width="400"/>
+
+#### Glass Identification Data Set
+
+**Accuracy**  
+
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALL-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALLindent-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13AdaMY-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13RFMy-1.png" alt="drawing" width="400"/>
+
+**ROC-AUC** 
+
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALL-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALLindent-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13AdaMY-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13RFMy-1.png" alt="drawing" width="400"/>
+
+#### Connectionist Bench (Sonar, Mines vs. Rocks) Data Set
+
+**Accuracy**
+
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALL-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALLindent-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13AdaMY-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13RFMy-1.png" alt="drawing" width="400"/>
+
+**ROC-AUC** 
+
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALL-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALLindent-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13AdaMY-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13RFMy-1.png" alt="drawing" width="400"/>
+
+#### Vehicle silhouettes
+
+**Accuracy**
+
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALL-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALLindent-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13AdaMY-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13RFMy-1.png" alt="drawing" width="400"/>
+
+**ROC-AUC** 
+
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALL-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALLindent-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13AdaMY-1.png" alt="drawing" width="400"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13RFMy-1.png" alt="drawing" width="400"/>
 
 ### Literature references
 [1] Zhi-Hua Zhou. Ensemble Methods: Foundations and Algorithms. — Chapman and Hall/CRC, 2012.
