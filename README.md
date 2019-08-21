@@ -94,7 +94,7 @@ In experiments below method realized in this project is compared with Random For
 <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/ALL_UCI4-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/ALLindent_UCI4-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/AdaMY_UCI4-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/RFMy_UCI4-1.png" alt="drawing" width="420"/>
 
 ### Literature references
-[1] Zhi-Hua Zhou. Ensemble Methods: Foundations and Algorithms. — Chapman and Hall/CRC, 2012.
-[2] [Random Forest Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
-[3] [Ada Boost Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostClassifier.html)
+[1] Zhi-Hua Zhou. Ensemble Methods: Foundations and Algorithms. — Chapman and Hall/CRC, 2012.  
+[2] [Random Forest Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)  
+[3] [Ada Boost Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostClassifier.html)  
 [4] [UCI Machine Learning Repository](\href{https://archive.ics.uci.edu/ml/datasets}{https://archive.ics.uci.edu/ml/datasets)
