@@ -17,14 +17,14 @@ There two factors which influence ensemble quality: quality of each ensemble's e
 
 3. *Node* is a set of objects placed in current node, for which a feature and threshold are searched for.
 
-4. <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ0.png" alt="drawing" width="100"/> is a tree built on step with number M. 
+4. <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ0.png" alt="drawing" width="30"/> is a tree built on step with number M. 
 
 5. *Leaf(x)* is a set of objects placed in the same leaf node as object x.  
-![pic1](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ1.gif) Неправильно!!!!  
+    <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ1.png" alt="drawing" width="300"/>  
 
 6. *C^M* is an ensemble built  on step with number M.  
-![pic2](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ2.gif)  
-![pic3](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ3.gif)  
+    <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ2.png" alt="drawing" width="300"/>  
+    <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ3.png" alt="drawing" width="300"/>
 
 7. *\lambda* is a coeffecient of previously builded trees'influence'.  
 
