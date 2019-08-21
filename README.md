@@ -11,7 +11,7 @@ Below can be found comparison between the method presented in this project  with
 There two factors which influence ensemble quality: quality of each ensemble's estimators and "difference" between each ensemble's estimators. Correctness of this statement can be shown by few different error decompositions which can be find in [1].
 
 ### Method's work  
-1. y(x)  реальная метка, соответствующая объекту $x$ в выборке.
+1. y(x)  реальная метка, соответствующая объекту x в выборке.
 
 2. K --- число классов в задаче классификации.
 
@@ -20,13 +20,20 @@ There two factors which influence ensemble quality: quality of each ensemble's e
 4. T^M --- дерево, построенное на M-м шаге. Leaf --- множество объектов в листовом узле, в котором находится x_i.  
 ![pic1](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ1.gif)
 
-5. C^M --- ансамбль построенный на M-м шаге. 
-![pic2](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ2.gif)
-![pic3](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ3.gif)
-$\hat{p}( k | C^M, x ) = \frac{1}{M}\sum\limits_{m = 1}^M \hat{p}( k | T^m, x )$\\
-$C^M(x) = \argmax\limits_{k \in {1, ..., K}} \hat{p}( k | C^M, x)$
+5. C^M --- ансамбль построенный на M-м шаге.  
+![pic2](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ2.png)  
+![pic3](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ3.png)  
 
-6. $\lambda$ --- коэффициент "влияния" \ предыдущих деревьев на построение
+6. \lambda --- коэффициент "влияния" предыдущих деревьев на построение.
+
+
+![pic4](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ4.gif)  
+![pic5](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ5.gif)  
+
+
+
+\textbf{Основная идея}: строить различные деревья, используя построенный на предыдущем шаге ансамбль, максимизировать его энтропию и минимизировать энтропию реальных откликов. 
+\tableofcontents}
 
 ### Experiments  
 
