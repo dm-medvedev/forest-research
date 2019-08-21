@@ -44,14 +44,28 @@ Below is formula which determine *H(s)*  particulary for the method considered i
 ### Experiments
 
 **Datasets**  
+
 |Classification task|Train size|Test size|Features|Classes|
 |-------------------|----------|---------|--------|-------|
 | [Optical Recognition of Handwritten Digits Data Set ](https://archive.ics.uci.edu/ml/datasets/optical+recognition+of+handwritten+digits)|5620|**None**|64|10|
 | [Credit scoring](https://archive.ics.uci.edu/ml/datasets/statlog+(german+credit+data)) |1000|**None**|24|2|
-| [Glass Identification Data Set ](https://archive.ics.uci.edu/ml/datasets/glass+identification)|214|**None**|9|6|
-| [Connectionist Bench (Sonar, Mines vs. Rocks) Data Set ](http://archive.ics.uci.edu/ml/datasets/connectionist+bench+(sonar,+mines+vs.+rocks))|208|**None**|60|2|
+| [Glass Identification Data Set](https://archive.ics.uci.edu/ml/datasets/glass+identification)|214|**None**|9|6|
+| [Connectionist Bench (Sonar, Mines vs. Rocks) Data Set](http://archive.ics.uci.edu/ml/datasets/connectionist+bench+(sonar,+mines+vs.+rocks))|208|**None**|60|2|
 | [Vehicle silhouettes](https://archive.ics.uci.edu/ml/datasets/Statlog+(Vehicle+Silhouettes)) |846|**None**|18|4|
 
+**Optical Recognition of Handwritten Digits Data Set**
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALL.pdf" type="application/pdf" width="300"/>
+\includepdf{nd13ALLindent.pdf}
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13AdaMY.pdf" alt="drawing" width="300"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13RFMy.pdf" alt="drawing" width="300"/>
+
+**Credit scoring**
+
+**Glass Identification Data Set**
+
+**Connectionist Bench (Sonar, Mines vs. Rocks) Data Set**
+
+**Vehicle silhouettes**
 
 ### Literature references
 [1] Zhi-Hua Zhou. Ensemble Methods: Foundations and Algorithms. — Chapman and Hall/CRC, 2012.
