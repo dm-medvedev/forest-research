@@ -8,16 +8,17 @@ This project's aim is development and research of new ensemble method based on d
 Below can be found comparison between the method presented in this project  with other well known ensemble models: Random Forest and Adaptive Boosting.
 
 ### Errors decompositions  
-There two factors which influence ensemble quality: quality of each ensemble's estimators and "difference" between each ensemble's estimators. Correctness of this statement can be shown by few different error decompositions which can be find in [1][1].
+There two factors which influence ensemble quality: quality of each ensemble's estimators and "difference" between each ensemble's estimators. Correctness of this statement can be shown by few different error decompositions which can be find in [1].
 
 ### Method's work  
-1. y(x) *** реальная метка, соответствующая объекту $x$ в выборке.
+1. y(x)  реальная метка, соответствующая объекту $x$ в выборке.
 
-2. $K$ --- число классов в задаче классификации.
+2. K --- число классов в задаче классификации.
 
-3. $Node$ --- множество объектов в текущем узле, для которого идёт поиск признака и порога по нему.
+3. Node --- множество объектов в текущем узле, для которого идёт поиск признака и порога по нему.
 
-4. $T^M$ --- дерево, построенное на $M$-м шаге. $Leaf$ --- множество объектов в листовом узле, в котором находится $x_i$. $\hat{p}( k | T^M, x ) = \frac{1}{|Leaf|}\sum\limits_{\hat{x} \in Leaf} \mathbb{I}[y(\hat{x}) = k]$.
+4. T^M --- дерево, построенное на M-м шаге. Leaf --- множество объектов в листовом узле, в котором находится x_i.  
+![pic1](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ1.gif)
 
 5. $ C^M $ --- ансамбль построенный на $M$-м шаге. 
 $\hat{p}( k | C^M, x ) = \frac{1}{M}\sum\limits_{m = 1}^M \hat{p}( k | T^m, x )$\\
