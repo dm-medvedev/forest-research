@@ -26,11 +26,8 @@ There two factors which influence ensemble quality: quality of each ensemble's e
 
 6. \lambda --- коэффициент "влияния" предыдущих деревьев на построение.
 
-
-// ![pic4](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ4.png)   
-<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ4.png" alt="drawing" width="200"/>
-![pic5](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ5.png =10x10)  
-
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ4.png" alt="drawing" width="400"/>  
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ5.png" alt="drawing" width="400"/>  
 
 
 \textbf{Основная идея}: строить различные деревья, используя построенный на предыдущем шаге ансамбль, максимизировать его энтропию и минимизировать энтропию реальных откликов. 
