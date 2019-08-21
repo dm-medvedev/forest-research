@@ -43,6 +43,8 @@ Below is formula which determine *H(s)*  particulary for the method considered i
 
 ### Experiments
 
+In experiments below method realized in this project is compared with Random Forest [2] and Adaptive Boosting [3] and also with combination of different pairs of these methods. All data can be found in UCI Machine Learning Repository [4].
+
 **Datasets**  
 
 |Classification task|Train size|Test size|Features|Classes|
@@ -93,3 +95,6 @@ Below is formula which determine *H(s)*  particulary for the method considered i
 
 ### Literature references
 [1] Zhi-Hua Zhou. Ensemble Methods: Foundations and Algorithms. — Chapman and Hall/CRC, 2012.
+[2] [Random Forest Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
+[3] [Ada Boost Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostClassifier.html)
+[4] [UCI Machine Learning Repository](\href{https://archive.ics.uci.edu/ml/datasets}{https://archive.ics.uci.edu/ml/datasets)
