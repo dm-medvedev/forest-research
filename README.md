@@ -59,49 +59,37 @@ Below is formula which determine *H(s)*  particulary for the method considered i
 
 <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALL-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13ALLindent-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13AdaMY-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/nd13RFMy-1.png" alt="drawing" width="420"/>
 
-**ROC-AUC** 
-
-<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/>
-
 #### Credit scoring
 
 **Accuracy**
 
-<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/ALL_UCI1-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/ALLindent_UCI1-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/AdaMY_UCI1-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/RFMy_UCI1-1.png" alt="drawing" width="420"/>
 
 **ROC-AUC** 
 
-<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/AUC_ALL_UCI1-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/AUC_ALLindent_UCI1-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/AUC_AdaMY_UCI1-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/AUC_RFMy_UCI1-1.png" alt="drawing" width="420"/>
 
 #### Glass Identification Data Set
 
 **Accuracy**  
 
-<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/>
-
-**ROC-AUC** 
-
-<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/ALL_UCI2-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/ALLindent_UCI2-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/AdaMY_UCI2-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/RFMy_UCI2-1.png" alt="drawing" width="420"/>
 
 #### Connectionist Bench (Sonar, Mines vs. Rocks) Data Set
 
 **Accuracy**
 
-<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/ALL_UCI3-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/ALLindent_UCI3-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/AdaMY_UCI3-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/RFMy_UCI3-1.png" alt="drawing" width="420"/>
 
 **ROC-AUC** 
 
-<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/AUC_ALL_UCI3-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/AUC_ALLindent_UCI3-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/AUC_AdaMY_UCI3-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/AUC_RFMy_UCI3-1.png" alt="drawing" width="420"/>
 
 #### Vehicle silhouettes
 
 **Accuracy**
 
-<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/>
-
-**ROC-AUC** 
-
-<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/-1.png" alt="drawing" width="420"/>
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/ALL_UCI4-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/ALLindent_UCI4-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/AdaMY_UCI4-1.png" alt="drawing" width="420"/> <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/RFMy_UCI4-1.png" alt="drawing" width="420"/>
 
 ### Literature references
 [1] Zhi-Hua Zhou. Ensemble Methods: Foundations and Algorithms. — Chapman and Hall/CRC, 2012.
