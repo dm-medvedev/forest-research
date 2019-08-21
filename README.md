@@ -22,16 +22,20 @@ There two factors which influence ensemble quality: quality of each ensemble's e
 5. *Leaf(x)* is a set of objects placed in the same leaf node as object x.  
     <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ1.png" alt="drawing" width="400"/>  
 
-6. *C^M* is an ensemble built  on step with number M.  
+6. <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/CM.png" alt="drawing" width="30"/> is an ensemble built  on step with number M.  
     <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ2.png" alt="drawing" width="300"/>  
     <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ3.png" alt="drawing" width="300"/>
 
-7. *\lambda* is a coeffecient of previously builded trees'influence'.  
+7. <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/lambda.png" alt="drawing" width="10"/> is a coeffecient of previously builded trees'influence'.  
 
 Below is placed general formula for building decidsion tree:  
+
+
 <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ4.png" alt="drawing" width="400"/>  
 
-Below is formula which determine *H(s)*  particulary for the method considered in this project:  
+Below is formula which determine *H(s)*  particulary for the method considered in this project: 
+
+
 <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ5.png" alt="drawing" width="500"/>  
 
 
