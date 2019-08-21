@@ -11,27 +11,31 @@ Below can be found comparison between the method presented in this project  with
 There two factors which influence ensemble quality: quality of each ensemble's estimators and "difference" between each ensemble's estimators. Correctness of this statement can be shown by few different error decompositions which can be find in [1].
 
 ### Method's work  
-1. y(x)  реальная метка, соответствующая объекту x в выборке.
+1. *y(x)* is a true label for *x* object.
 
-2. K --- число классов в задаче классификации.
+2. *K* is number of classes.
 
-3. Node --- множество объектов в текущем узле, для которого идёт поиск признака и порога по нему.
+3. *Node* is a set of objects placed in current node, for which a feature and threshold are searched for.
 
-4. T^M --- дерево, построенное на M-м шаге. Leaf --- множество объектов в листовом узле, в котором находится x_i.  
-![pic1](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ1.gif)
+4. *T^M* is a tree built on step with number M. 
 
-5. C^M --- ансамбль построенный на M-м шаге.  
+5. *Leaf(x)* is a set of objects placed in the same leaf node as object x.  
+![pic1](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ1.gif) Неправильно!!!!  
+
+6. *C^M* is an ensemble built  on step with number M.  
 ![pic2](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ2.gif)  
 ![pic3](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ3.gif)  
 
-6. \lambda --- коэффициент "влияния" предыдущих деревьев на построение.
+7. *\lambda* is a coeffecient of previously builded trees'influence'.  
 
+Below is placed general formula for building decidsion tree:  
 <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ4.png" alt="drawing" width="400"/>  
-<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ5.png" alt="drawing" width="400"/>  
+
+Below is formula which determine *H(s)*  particulary for the method considered in this project:  
+<img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ5.png" alt="drawing" width="500"/>  
 
 
-\textbf{Основная идея}: строить различные деревья, используя построенный на предыдущем шаге ансамбль, максимизировать его энтропию и минимизировать энтропию реальных откликов. 
-\tableofcontents}
+**General idea** is to build different trees using the ensemble built on previous step, maximize its entropy and minimize the entropy of real labels.  
 
 ### Experiments  
 
