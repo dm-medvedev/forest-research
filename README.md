@@ -21,14 +21,14 @@ There two factors which influence ensemble quality: quality of each ensemble's e
 ![pic1](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ1.gif)
 
 5. C^M --- ансамбль построенный на M-м шаге.  
-![pic2](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ2.png)  
-![pic3](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ3.png)  
+![pic2](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ2.gif)  
+![pic3](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ3.gif)  
 
 6. \lambda --- коэффициент "влияния" предыдущих деревьев на построение.
 
 
-![pic4](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ4.gif)  
-![pic5](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ5.gif)  
+![pic4](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ4.png)  
+![pic5](https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ5.png)  
 
 
 
