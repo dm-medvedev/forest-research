@@ -4,7 +4,7 @@ Compiled for Linux  with c++14 and python 3.5.2 usage
 **Compilation**
 For Linux systems, the probable order is as follows:  
 1) check your python version   
-2) install cython via pip3 (link)[https://cython.readthedocs.io/en/latest/src/quickstart/install.html]  
+2) install cython via pip3 [link](https://cython.readthedocs.io/en/latest/src/quickstart/install.html) 
 3) Now you're able to run command:   
    `cython --cplus PyEnsemble.pyx`     
 4) run command to find appropriate for your python 3 version library:   
