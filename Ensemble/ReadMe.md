@@ -2,7 +2,7 @@
 Compiled for Linux  with c++14 and python 3.5.2 usage
 
 **Compilation**  
-For Linux systems, the probable order is as follows:  
+For Linux systems, the order is likely as follows:  
 1) check your python3 version   
 2) install cython via pip3 [link](https://cython.readthedocs.io/en/latest/src/quickstart/install.html) 
 3) Now you're able to run command:   
