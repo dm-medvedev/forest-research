@@ -1,7 +1,7 @@
 **Main code of project**  
 Compiled for Linux  with c++14 and python 3.5.2 usage
 
-**Compilation**
+**Compilation**  
 For Linux systems, the probable order is as follows:  
 1) check your python version   
 2) install cython via pip3 [link](https://cython.readthedocs.io/en/latest/src/quickstart/install.html) 
