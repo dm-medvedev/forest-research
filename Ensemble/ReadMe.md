@@ -20,5 +20,5 @@ For Linux systems, the probable order is as follows:
    g++ -std=c++14 -I/usr/include/python3.5 PyEnsemble.cpp MyTree.cpp MyTmp.cpp -shared -fPIC -O3 -o PyEnsemble_tmp.so -lpython3.5m
    ~~~
    
-   **Notice:** common problem is: `fatal error: Python.h: No such file or directory compilation terminated`  
+   **Notice:** common problem is: `fatal error: Python.h: No such file or directory compilation terminated`.  
    But it can be [solved](https://stackoverflow.com/questions/21530577/fatal-error-python-h-no-such-file-or-directory).
