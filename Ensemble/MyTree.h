@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include <memory>
-#include "MyTmp.h"
+#include "MySplitter.h"
 
 using namespace std;
 
@@ -45,7 +45,7 @@ class NodeInfoContainer {
 
 class MyTree {
   public:
-	TmpClass splitter;
+	MySplitterClass splitter;
 	unique_ptr<MyNode> root_ptr;
 	int max_depth;
 	int verbose;

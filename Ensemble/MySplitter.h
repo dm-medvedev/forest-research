@@ -19,17 +19,17 @@ struct DataObject {
 	vector<int> feat_hist_indxs; // size: feature size
 };
 
-class TmpClass {
+class MySplitterClass {
   public:
 	int num_classes;
 	float lambda;
 	float lr;
 
-	TmpClass();
+	MySplitterClass();
 
-	~TmpClass();
+	~MySplitterClass();
 
-	TmpClass(int num_classes, float lambda, float lr);
+	MySplitterClass(int num_classes, float lambda, float lr);
 
 	tuple< vector<DataObject>, vector< vector<float> > >
 	transform_data(const vector< vector<float> > &X,

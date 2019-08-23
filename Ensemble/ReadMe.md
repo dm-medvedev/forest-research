@@ -1,5 +1,5 @@
 **Main code of project**  
-Compiled for Linux  with c++14 and python 3.5.2 usage
+Compiled for Linux  with c++14 and python 3.7.3 usage
 
 **Compilation**  
 For Linux systems, the order is likely as follows:  
@@ -13,11 +13,11 @@ For Linux systems, the order is likely as follows:
    `/usr/lib/x86_64-linux-gnu/`
 6) try to run command with appropriate version:  
    ~~~
-   g++ -std=c++14 -I/usr/include/python3.{VERSION} PyEnsemble.cpp MyTree.cpp MyTmp.cpp -shared -fPIC -O3 -o PyEnsemble_tmp.so - lpython3.{VERSION}m
+   g++ -std=c++14 -I/usr/include/python3.{VERSION} PyEnsemble.cpp MyTree.cpp MySplitter.cpp -shared -fPIC -O3 -o PyEnsemble_tmp.so - lpython3.{VERSION}m
    ~~~
    In my case command looked like:  
    ~~~
-   g++ -std=c++14 -I/usr/include/python3.5 PyEnsemble.cpp MyTree.cpp MyTmp.cpp -shared -fPIC -O3 -o PyEnsemble_tmp.so -lpython3.5m
+   g++ -std=c++14 -I/usr/include/python3.7 PyEnsemble.cpp MyTree.cpp MySplitter.cpp -shared -fPIC -O3 -o PyEnsemble_tmp.so -lpython3.7m
    ~~~
    
    **Notice:** common problem is: `fatal error: Python.h: No such file or directory compilation terminated`.  

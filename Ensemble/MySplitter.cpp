@@ -7,7 +7,7 @@
 #include <numeric>
 #include <cfloat>
 #include <functional>
-#include "MyTmp.h"
+#include "MySplitter.h"
 
 
 using namespace std;
@@ -37,20 +37,20 @@ this->num_classes - number of classes in classification task
 0 <= label < num_classes
 this->lambda - ensemble influence coefficient
 */
-TmpClass::TmpClass() {}
+MySplitterClass::MySplitterClass() {}
 
 
-TmpClass::~TmpClass() {}
+MySplitterClass::~MySplitterClass() {}
 
 
-TmpClass::TmpClass(int num_classes, float lambda, float lr) {
+MySplitterClass::MySplitterClass(int num_classes, float lambda, float lr) {
 	this->num_classes = num_classes;
 	this->lambda = lambda;
 	this->lr = lr;
 }
 
 tuple< vector<DataObject>, vector< vector<float> > >
-TmpClass::transform_data(const vector< vector<float> > &X,
+MySplitterClass::transform_data(const vector< vector<float> > &X,
                          const vector<int> &y,
                          const vector< vector<float> > &proba) {
 	/*
@@ -81,7 +81,7 @@ TmpClass::transform_data(const vector< vector<float> > &X,
 	return make_tuple(data, unq_features);
 }
 
-tuple<int, vector<float> > TmpClass::get_label(const vector<DataObject*> &data) {
+tuple<int, vector<float> > MySplitterClass::get_label(const vector<DataObject*> &data) {
 	// return label and proba
 	vector<int> hist(this->num_classes, 0);
 	int res_label, max = 0;
@@ -102,7 +102,7 @@ tuple<int, vector<float> > TmpClass::get_label(const vector<DataObject*> &data) 
 
 }
 
-vector<float> TmpClass::get_my_entropy(const vector< vector<int> > &l_real_cum_hist,
+vector<float> MySplitterClass::get_my_entropy(const vector< vector<int> > &l_real_cum_hist,
                                        const vector< vector<int> > &r_real_cum_hist,
                                        const vector< vector<float> > &l_proba_cum_hist,
                                        const vector< vector<float> > &r_proba_cum_hist,
@@ -155,7 +155,7 @@ vector<float> TmpClass::get_my_entropy(const vector< vector<int> > &l_real_cum_h
 }
 
 
-tuple<vector<int>, vector<float>> TmpClass::get_thresholds(const vector<float> &feature_vec) {
+tuple<vector<int>, vector<float>> MySplitterClass::get_thresholds(const vector<float> &feature_vec) {
 	vector<int> indxs;
 	vector<size_t> permutation;
 	permutation = sort_permutation(feature_vec);
@@ -182,7 +182,7 @@ tuple<vector<int>, vector<float>> TmpClass::get_thresholds(const vector<float> &
 }
 
 
-tuple<int, int, int, bool> TmpClass::get_best(const vector<DataObject*> &data,
+tuple<int, int, int, bool> MySplitterClass::get_best(const vector<DataObject*> &data,
         const vector< vector<float> > &unq_features,
         int verbose, int depth) {
 	bool is_leaf(false), prod(true);
@@ -198,9 +198,7 @@ tuple<int, int, int, bool> TmpClass::get_best(const vector<DataObject*> &data,
 	}
 
 	float min_S = FLT_MAX;
-	int volume = 0;
-	int res_feat_indx = 0;
-	int l_unq_indx = 0, r_unq_indx = 1;
+	int volume = 0, res_feat_indx = 0, l_unq_indx = 0, r_unq_indx = 1;
 	vector< int > res_l_obj_num;
 
 	for (int f = 0; f < unq_features.size(); ++f) {
@@ -274,7 +272,7 @@ tuple<int, int, int, bool> TmpClass::get_best(const vector<DataObject*> &data,
 }
 
 
-tuple< vector< DataObject* >, vector< DataObject* > >  TmpClass::split_data(
+tuple< vector< DataObject* >, vector< DataObject* > >  MySplitterClass::split_data(
     const vector< DataObject* > &data, float threshold_indx, int feat_indx) {
 	vector< DataObject* > l_data, r_data;
 	for ( auto ptr : data) {
