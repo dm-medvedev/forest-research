@@ -43,16 +43,14 @@ MySplitterClass::MySplitterClass() {}
 MySplitterClass::~MySplitterClass() {}
 
 
-MySplitterClass::MySplitterClass(int num_classes, float lambda, float lr) {
-	this->num_classes = num_classes;
-	this->lambda = lambda;
-	this->lr = lr;
+MySplitterClass::MySplitterClass(int num_classes, float lambda, float lr)
+	: num_classes(num_classes), lambda(lambda), lr(lr) {
 }
 
 tuple< vector<DataObject>, vector< vector<float> > >
 MySplitterClass::transform_data(const vector< vector<float> > &X,
-                         const vector<int> &y,
-                         const vector< vector<float> > &proba) {
+                                const vector<int> &y,
+                                const vector< vector<float> > &proba) {
 	/*
 		X shape is: features_num * obj_num
 		y shape is: obj_num
@@ -65,7 +63,7 @@ MySplitterClass::transform_data(const vector< vector<float> > &X,
 	for (vector<float> feature_vec : X) {
 		vector<int> tmp_hist_places;
 		vector<float> tmp_unq;
-		tie(tmp_hist_places, tmp_unq) = this->get_thresholds(feature_vec);
+		tie(tmp_hist_places, tmp_unq) = get_thresholds(feature_vec);
 		hist_places.push_back(tmp_hist_places);
 		unq_features.push_back(tmp_unq);
 	}
@@ -83,7 +81,7 @@ MySplitterClass::transform_data(const vector< vector<float> > &X,
 
 tuple<int, vector<float> > MySplitterClass::get_label(const vector<DataObject*> &data) {
 	// return label and proba
-	vector<int> hist(this->num_classes, 0);
+	vector<int> hist(num_classes, 0);
 	int res_label, max = 0;
 	vector<float> res_proba(hist.size(), 0.0);
 
@@ -103,10 +101,10 @@ tuple<int, vector<float> > MySplitterClass::get_label(const vector<DataObject*> 
 }
 
 vector<float> MySplitterClass::get_my_entropy(const vector< vector<int> > &l_real_cum_hist,
-                                       const vector< vector<int> > &r_real_cum_hist,
-                                       const vector< vector<float> > &l_proba_cum_hist,
-                                       const vector< vector<float> > &r_proba_cum_hist,
-                                       const vector<int> &l_obj_num, int obj_num, int depth) {
+        const vector< vector<int> > &r_real_cum_hist,
+        const vector< vector<float> > &l_proba_cum_hist,
+        const vector< vector<float> > &r_proba_cum_hist,
+        const vector<int> &l_obj_num, int obj_num, int depth) {
 	/*
 		l_real_cum_hist - (feat_thr_num)*class_num; Vector's  each cell contains
 			number of appropriate class objects, which value less then appropriate threshold.
@@ -126,7 +124,7 @@ vector<float> MySplitterClass::get_my_entropy(const vector< vector<int> > &l_rea
 	float step_size = 1.0;
 
 	for (int j = 0; j < depth; ++j)
-		step_size = step_size * this->lr;
+		step_size = step_size * lr;
 
 	for (int i = 0; i < entropy.size(); ++i) {
 		float left_S = 0.0, right_S = 0.0;
@@ -137,16 +135,16 @@ vector<float> MySplitterClass::get_my_entropy(const vector< vector<int> > &l_rea
 			continue;
 		}
 
-		for (int k = 0; k < this->num_classes; ++k) {
+		for (int k = 0; k < num_classes; ++k) {
 			float p1_lk = l_real_cum_hist[i][k] / (R_l * 1.0);
 			float p1_rk = r_real_cum_hist[i][k] / (R_r * 1.0);
 			float p2_lk = l_proba_cum_hist[i][k] / (R_l * 1.0);
 			float p2_rk = r_proba_cum_hist[i][k] / (R_r * 1.0);
 
 			left_S -= (p1_lk == 0 ? 0 : p1_lk * log(p1_lk));
-			left_S += (step_size * (this->lambda)) * (p2_lk == 0 ? 0 : p2_lk * log(p2_lk));
+			left_S += (step_size * lambda) * (p2_lk == 0 ? 0 : p2_lk * log(p2_lk));
 			right_S -= (p1_rk == 0 ? 0 : p1_rk * log(p1_rk));
-			right_S += (step_size * (this->lambda)) * (p2_rk == 0 ? 0 : p2_rk * log(p2_rk));
+			right_S += (step_size * lambda) * (p2_rk == 0 ? 0 : p2_rk * log(p2_rk));
 		}
 		entropy[i] += (R_l / (R * 1.0) ) * left_S + ( (R - R_l) / (R * 1.0) ) * right_S;
 	}
@@ -202,10 +200,10 @@ tuple<int, int, int, bool> MySplitterClass::get_best(const vector<DataObject*> &
 	vector< int > res_l_obj_num;
 
 	for (int f = 0; f < unq_features.size(); ++f) {
-		vector<float> prob_inn_hist(this->num_classes, 0.0);
+		vector<float> prob_inn_hist(num_classes, 0.0);
 		vector< vector<float> > l_prob_cum_hist(unq_features[f].size() - 1, prob_inn_hist),
 		        r_prob_cum_hist(unq_features[f].size() - 1, prob_inn_hist);
-		vector<int> real_inn_hist(this->num_classes, 0),
+		vector<int> real_inn_hist(num_classes, 0),
 		       l_obj_num(unq_features[f].size() - 1, 0);
 		vector< vector<int> > l_real_cum_hist(unq_features[f].size() - 1, real_inn_hist),
 		        r_real_cum_hist(unq_features[f].size() - 1, real_inn_hist);
@@ -219,7 +217,7 @@ tuple<int, int, int, bool> MySplitterClass::get_best(const vector<DataObject*> &
 			}
 			if (h_i > 0)
 				r_real_cum_hist[h_i - 1][k] += 1;
-			for (int cl = 0; cl < this->num_classes; ++cl) {
+			for (int cl = 0; cl < num_classes; ++cl) {
 				if (h_i < unq_features[f].size() - 1)
 					l_prob_cum_hist[h_i][cl] += p[cl];
 
@@ -228,7 +226,7 @@ tuple<int, int, int, bool> MySplitterClass::get_best(const vector<DataObject*> &
 			}
 		}
 		for (int h_i = 1; h_i < unq_features[f].size() - 1; ++h_i) {
-			for (int k = 0; k < this->num_classes; ++k) {
+			for (int k = 0; k < num_classes; ++k) {
 				int rh_i = (unq_features[f].size() - 1) - 1 - h_i;
 
 				l_prob_cum_hist[h_i][k] += l_prob_cum_hist[h_i - 1][k];

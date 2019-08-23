@@ -16,41 +16,30 @@ MyEnsemble::~MyEnsemble() {}
 
 
 MyEnsemble::MyEnsemble(int num_classes, float reg_param, float lr,
-                       int num_trees, bool warm_start, int max_depth, int verbose, int bootstrap_seed) {
-	this->num_classes = num_classes;
-	this->reg_param = reg_param;
-	this->lr = lr;
-	this->num_trees = num_trees;
-	this->warm_start = warm_start;
-	this->max_depth = max_depth == -1 ? INT_MAX : max_depth;
-	this->verbose = verbose;
-	this->bootstrap_seed = bootstrap_seed;
-	if (bootstrap_seed > -2)
-		this->bootstrap = true;
-	else
-		this->bootstrap = false;
-}
+                       int num_trees, bool warm_start, int max_depth, int verbose, int bootstrap_seed)
+	: num_classes(num_classes), reg_param(reg_param), lr(lr), num_trees(num_trees),
+	  warm_start(warm_start), max_depth(max_depth == -1 ? INT_MAX : max_depth), verbose(verbose),
+	  bootstrap_seed(bootstrap_seed), bootstrap(bootstrap_seed > -2) {}
 
 
 void MyEnsemble::fit(const vector< vector<float> > &X, const vector<int> &y) {
 	vector<float> probs(X[0].size(), 0.0); // Obj_num
-	vector< vector<float> > ens_probs(this->num_classes, probs),
-	        votes(this->num_classes, probs);// if not warm_start
+	vector< vector<float> > ens_probs(num_classes, probs), votes(num_classes, probs);// if not warm_start
 	vector< DataObject > Data_vec; // if not warm_start
 	vector< vector<float> > unq_features; // if not warm_start
 
-	if (this->forest.size() == 0) {
-		if (this-> bootstrap) {
-			if ( bootstrap_seed == -1)
+	if (forest.size() == 0) {
+		if (bootstrap) {
+			if ( bootstrap_seed == -1 )
 				srand( time(NULL) );
 			else
 				srand(bootstrap_seed);
 		}
 		float reg_param = 0;
-		MyTree new_tree = MyTree(this->num_classes, reg_param, this->lr, this->max_depth,
-		                         this->verbose, this->bootstrap);
+		MyTree new_tree = MyTree(num_classes, reg_param, lr, max_depth,
+		                         verbose, bootstrap);
 
-		if (this->verbose >= 1)
+		if (verbose >= 1)
 			cout << ">> Tree number: " << 1 << " <<" << endl;
 
 		if (!warm_start) {
@@ -59,65 +48,60 @@ void MyEnsemble::fit(const vector< vector<float> > &X, const vector<int> &y) {
 			vector<int> _;
 			vector< vector<float> > tmp_probs;
 			tie(_, tmp_probs) = new_tree.predict(X);
-			for (int k = 0; k < this->num_classes; ++k)
+			for (int k = 0; k < num_classes; ++k)
 				for (int t = 0; t < X[0].size(); ++t) {
 					Data_vec[t].ens_proba[k] = tmp_probs[t][k];
 					votes[k][t] += tmp_probs[t][k];
 				}
-		}
-
-		else
+		} else
 			new_tree.fit(X, y, ens_probs);
-		this->forest.emplace_back(move(new_tree));
+		forest.emplace_back(move(new_tree));
 	}
 
-	int start_trees_cnt = this->forest.size();
-	// fit new trees with labels: count = this->num_trees - this->forest.size()
-	for (int i = 0; i < this->num_trees - start_trees_cnt; ++i) {
-		MyTree new_tree = MyTree(this->num_classes, this->reg_param, this->lr,
-		                         this->max_depth, this->verbose, this->bootstrap);
+	int start_trees_cnt = forest.size();
+	// fit new trees with labels: count = num_trees - forest.size()
+	for (int i = 0; i < num_trees - start_trees_cnt; ++i) {
+		MyTree new_tree = MyTree(num_classes, reg_param, lr,
+		                         max_depth, verbose, bootstrap);
 
-		if (this->verbose >= 1)
+		if (verbose >= 1)
 			cout << ">> Tree number: " << start_trees_cnt + 1 + i << " <<" << endl;
 
 		if (warm_start) {
-			vector< vector<float> > votes = this->get_forest_votes(X);
-			for (int k = 0; k < this->num_classes; ++k)
+			vector< vector<float> > votes = get_forest_votes(X);
+			for (int k = 0; k < num_classes; ++k)
 				for (int t = 0; t < X[0].size(); ++t)
-					ens_probs[k][t] = votes[t][k] / (this->forest.size() * 1.0);
+					ens_probs[k][t] = votes[t][k] / (forest.size() * 1.0);
 
 			new_tree.fit(X, y, ens_probs);
-		}
-
-		else {
+		} else {
 			new_tree.fit(Data_vec, unq_features);
 			vector<int> _;
 			vector< vector<float> > tmp_probs;
 			tie(_, tmp_probs) = new_tree.predict(X);
-			for (int k = 0; k < this->num_classes; ++k)
+			for (int k = 0; k < num_classes; ++k)
 				for (int t = 0; t < X[0].size(); ++t) {
-					float sz = this->forest.size();
+					float sz = forest.size();
 					votes[k][t] += tmp_probs[t][k];
 					Data_vec[t].ens_proba[k] = votes[k][t] / (sz + 1.0);
 				}
 		}
-
-		this->forest.emplace_back(move(new_tree));
-		if (this->verbose >= 1)
-			cout << ">> Ensemble size: " << this->forest.size() << " <<" << endl;
+		forest.emplace_back(move(new_tree));
+		if (verbose >= 1)
+			cout << ">> Ensemble size: " << forest.size() << " <<" << endl;
 	}
 }
 
 vector<int>  MyEnsemble::predict(const vector< vector<float> > &X) {
 	// get labels and start election
-	vector< vector<float> > votes = this->get_forest_votes(X);
-	return this->get_forest_res(votes);
+	vector< vector<float> > votes = get_forest_votes(X);
+	return get_forest_res(votes);
 }
 
 
 vector< vector<float> >  MyEnsemble::predict_proba(const vector< vector<float> > &X) {
 	// get labels and start election
-	vector< vector<float> > votes = this->get_forest_votes(X);
+	vector< vector<float> > votes = get_forest_votes(X);
 	for (int i = 0; i < votes.size(); ++i) {
 		float sum = 0.0;
 		for (float el : votes[i])
@@ -130,12 +114,12 @@ vector< vector<float> >  MyEnsemble::predict_proba(const vector< vector<float> >
 
 
 vector< vector<float> > MyEnsemble::get_forest_votes(const vector< vector<float> > &X) {
-	vector<float> hist(this->num_classes, 0);
+	vector<float> hist(num_classes, 0);
 	vector< vector<float> > votes(X[0].size(), hist); //  samples_num * classes_num
-	for (int i = 0; i < this->forest.size(); ++i) {
+	for (int i = 0; i < forest.size(); ++i) {
 		vector<int> tmp_y;
 		vector< vector<float> > tmp_probs;
-		tie(tmp_y, tmp_probs) = this->forest[i].predict(X);
+		tie(tmp_y, tmp_probs) = forest[i].predict(X);
 		for (int j = 0; j < votes.size(); ++j) {
 			float sum = 0.0;
 			for (int k = 0; k < votes[0].size(); ++k) {
@@ -160,13 +144,13 @@ vector<int> MyEnsemble::get_forest_res(const vector< vector<float> > &votes) {
 }
 
 vector< vector<int> > MyEnsemble::warm_predict(const vector< vector<float> > &X) {
-	vector< vector< vector<float> > >votes = this->warm_get_forest_votes(X);
-	return this->warm_get_forest_res(votes);
+	vector< vector< vector<float> > >votes = warm_get_forest_votes(X);
+	return warm_get_forest_res(votes);
 }
 
 
 vector< vector< vector<float> > > MyEnsemble::warm_predict_proba(const vector< vector<float> > &X) {
-	vector< vector< vector<float> > > votes = this->warm_get_forest_votes(X);
+	vector< vector< vector<float> > > votes = warm_get_forest_votes(X);
 	for (int k = 0; k < votes.size(); ++k) {
 		for ( auto arr : votes[k]) {
 			float sum = 0.0;
@@ -182,14 +166,14 @@ vector< vector< vector<float> > > MyEnsemble::warm_predict_proba(const vector< v
 
 vector< vector< vector<float> > > MyEnsemble::get_each_tree_votes(const vector< vector<float> > &X) {
 	// get labels and start election
-	vector<float> hist(this->num_classes, 0.0);
+	vector<float> hist(num_classes, 0.0);
 	vector< vector<float> > votes(X[0].size(), hist); // samples_num * classes_num
-	vector< vector< vector<float> > > res(this->forest.size(), votes); // trees_num * smples_num * classes_num
+	vector< vector< vector<float> > > res(forest.size(), votes); // trees_num * smples_num * classes_num
 
-	for (int i = 0; i < this->forest.size(); ++i) {
+	for (int i = 0; i < forest.size(); ++i) {
 		vector<int> tmp_y;
 		vector< vector<float> > tmp_probs;
-		tie(tmp_y, tmp_probs) = this->forest[i].predict(X);
+		tie(tmp_y, tmp_probs) = forest[i].predict(X);
 		for (int j = 0; j < votes.size(); ++j) {
 			float sum = 0.0;
 			for (int k = 0; k < votes[0].size(); ++k) {
@@ -206,14 +190,14 @@ vector< vector< vector<float> > > MyEnsemble::get_each_tree_votes(const vector< 
 
 vector< vector< vector<float> > > MyEnsemble::warm_get_forest_votes(const vector< vector<float> > &X) {
 	// get labels and start election
-	vector<float> hist(this->num_classes, 0.0);
+	vector<float> hist(num_classes, 0.0);
 	vector< vector<float> > votes(X[0].size(), hist); // samples_num * classes_num
-	vector< vector< vector<float> > > res(this->forest.size(), votes); // trees_num * smples_num * classes_num
+	vector< vector< vector<float> > > res(forest.size(), votes); // trees_num * smples_num * classes_num
 
-	for (int i = 0; i < this->forest.size(); ++i) {
+	for (int i = 0; i < forest.size(); ++i) {
 		vector<int> tmp_y;
 		vector< vector<float> > tmp_probs;
-		tie(tmp_y, tmp_probs) = this->forest[i].predict(X);
+		tie(tmp_y, tmp_probs) = forest[i].predict(X);
 		for (int j = 0; j < votes.size(); ++j) {
 			float sum = 0.0;
 			for (int k = 0; k < votes[0].size(); ++k) {
@@ -240,6 +224,5 @@ vector< vector<int> > MyEnsemble::warm_get_forest_res(const vector< vector< vect
 			                     max_element(votes[k][i].begin(), votes[k][i].end()));
 		}
 	}
-
 	return res;
 }
