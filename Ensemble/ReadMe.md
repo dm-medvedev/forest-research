@@ -13,7 +13,7 @@ For Linux systems, the order is likely as follows:
    `/usr/lib/x86_64-linux-gnu/`
 6) try to run command with appropriate version:  
    ~~~
-   g++ -std=c++14 -I/usr/include/python3.{VERSION} PyEnsemble.cpp MyTree.cpp MySplitter.cpp -shared -fPIC -O3 -o PyEnsemble.so - lpython3.{VERSION}m
+   g++ -std=c++14 -I/usr/include/python3.{VERSION} PyEnsemble.cpp MyTree.cpp MySplitter.cpp -shared -fPIC -O3 -o PyEnsemble.so -lpython3.{VERSION}m
    ~~~
    In my case command looked like:  
    ~~~
