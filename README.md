@@ -26,7 +26,7 @@ There two factors which influence ensemble quality: quality of each ensemble's e
     <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ2.png" alt="drawing" width="300"/>  
     <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/EQ3.png" alt="drawing" width="300"/>
 
-7. <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/lambda.png" alt="drawing" width="10"/> is a coefficient of previously builded trees'influence'.  
+7. <img src="https://github.com/dm-medvedev/forest-research/blob/master/pictures/lambda.png" alt="drawing" width="10"/> is a coefficient of previously builded trees' influence.  
 
 Below is placed general formula for building decision tree:  
 
