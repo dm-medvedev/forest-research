@@ -168,7 +168,7 @@ vector< vector< vector<float> > > MyEnsemble::get_each_tree_votes(const vector< 
 	// get labels and start election
 	vector<float> hist(num_classes, 0.0);
 	vector< vector<float> > votes(X[0].size(), hist); // samples_num * classes_num
-	vector< vector< vector<float> > > res(forest.size(), votes); // trees_num * smples_num * classes_num
+	vector< vector< vector<float> > > res(forest.size(), votes); // trees_num * samples_num * classes_num
 
 	for (int i = 0; i < forest.size(); ++i) {
 		vector<int> tmp_y;
@@ -192,7 +192,7 @@ vector< vector< vector<float> > > MyEnsemble::warm_get_forest_votes(const vector
 	// get labels and start election
 	vector<float> hist(num_classes, 0.0);
 	vector< vector<float> > votes(X[0].size(), hist); // samples_num * classes_num
-	vector< vector< vector<float> > > res(forest.size(), votes); // trees_num * smples_num * classes_num
+	vector< vector< vector<float> > > res(forest.size(), votes); // trees_num * samples_num * classes_num
 
 	for (int i = 0; i < forest.size(); ++i) {
 		vector<int> tmp_y;
